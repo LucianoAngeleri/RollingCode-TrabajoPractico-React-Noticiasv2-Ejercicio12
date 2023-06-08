@@ -1,7 +1,7 @@
 import { Card,Button,Col } from "react-bootstrap";
 import imagenNoDisponible from "../assets/imagenNoDisponible.jpg"
 
-const Noticia = ({title,category,description,image_url,link}) => {
+const Noticia = ({title,category,description,image_url,link, pais}) => {
     const imagenCard = (image_url)?(<Card.Img variant="top" src={image_url} />):(<Card.Img variant="top" src={imagenNoDisponible} />)
 
     const traduccionesCategorias = {
@@ -26,6 +26,7 @@ const Noticia = ({title,category,description,image_url,link}) => {
             {imagenCard}
             <Card.Body>
                 <Card.Subtitle className="pb-3">{categoriaTraducida}</Card.Subtitle>
+                <Card.Subtitle className="pb-3">{pais}</Card.Subtitle>
                 <Card.Title className="pb-3 text-primary">{title}</Card.Title>
                 <Card.Text className="pb-3 lead fs-6">{description}</Card.Text>
             </Card.Body>
